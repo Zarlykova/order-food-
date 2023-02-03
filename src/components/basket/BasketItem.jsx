@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import styled from "styled-components";
 import Button from "../UI/Button"
 
-const BasketItem = ({title, price , amount })=>{
+const BasketItem = ({title, price , amount , decrementAmount , incrementAmount ,})=>{
+   
+    
     return(
      <Container>
         <Title>
@@ -13,8 +16,8 @@ const BasketItem = ({title, price , amount })=>{
                 <Amount> x {amount} </Amount>
             </PriceAmountContainer>
             <CounterContainer>
-                <Button borderStyle="squared" variant="outlined">-</Button>
-                <Button borderStyle="squared" variant="outlined">+</Button>
+                <Button borderStyle="squared" variant="outlined" onClick={decrementAmount} >-</Button>
+                <Button borderStyle="squared" variant="outlined" onClick={incrementAmount}>+</Button>
             </CounterContainer>
 
         </Content>
